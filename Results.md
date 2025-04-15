@@ -14,5 +14,13 @@ It's highly right-skewed, meaning most values are clustered near zero, with a lo
 This hitogram is after the standardization and log transformation- 
 The plot is now symmetric, bell-shaped curve centered around 0, which has now removed the extreme right skew, showing proper standardization.
 
+# Confusion matrix Results
+![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20144513.png)
+
+The matrix predicts the genes of the same clusters.
+
 # UMAP Results
-![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20150855.png)
+
+
+This visualization shows a UMAP projection combined with K-Means clustering, where points are grouped into six distinct clusters (labeled 0-5) using different colors.
+
