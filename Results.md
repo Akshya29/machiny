@@ -7,8 +7,12 @@ Standardization- Rescales each feature to have a mean of 0 and a standard deviat
 ![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20153214.png)
 
 This histogram is for the raw gene expression data before standardization-
-It's highly right-skewed, meaning most of the values are clustered near zero, with a long tail of higher expression values. 
+It's highly right-skewed, meaning most values are clustered near zero, with a long tail of higher expression values. 
 
-![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20144503.png)
+![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20150855.png)
+
 This hitogram is after the standardization and log transformation- 
 The plot is now symmetric, bell-shaped curve centered around 0, which has now removed the extreme right skew, showing proper standardization.
+
+# UMAP Results
+![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20150855.png)
