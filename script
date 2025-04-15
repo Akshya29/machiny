@@ -18,16 +18,19 @@ df = pd.read_excel("tpg2plantgenome2015040025-sup-0001.xlsx")
 z_scores = np.abs(df[['Z1', 'Z2', 'Z3', 'Z4']].apply(zscore))# Z-scores
 df_filtered = df[(z_scores < 3).all(axis=1)]# (just for now 3) ## Set threshold
 print(f"Removed {len(df) - len(df_filtered)} outliers.")
+# Removed 259 outliers.
 
 # Remove low-expressed genes
 df_filtered = df_filtered[df_filtered[['Z1', 'Z2', 'Z3', 'Z4']].max(axis=1) > 5]# set a threshold (e.g., keep genes with max expression >5)
 print(f"Removed {len(df) - len(df_filtered)} low-expressed genes.")
+# Removed 325 low-expressed genes.
 
 #Select highly variable genes for analysis
 df['Variance'] = df[['Z1', 'Z2', 'Z3', 'Z4']].var(axis=1)
 threshold = df_filtered['Variance'].quantile(0.75)
 df_filtered = df_filtered[df_filtered['Variance'] > threshold]
 print(f"Selected {len(df_filtered)} highly variable genes.")
+# Selected 2337 highly variable genes.
 
 # Standardize
 X = df_filtered[['Z1', 'Z2', 'Z3', 'Z4']]  # Numerical features
@@ -37,7 +40,19 @@ y_encoded = label_encoder.fit_transform(y)
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
-sbn.histplot(X_scaled.sum(axis=1), discrete=False, legend=False)
+
+#plot the data before standardization
+sns.histplot(X.sum(axis=1), discrete=False, legend=False)
+
+# log2 tranformation
+df_filtered[['Z1', 'Z2', 'Z3', 'Z4']] = np.log2(1 + df_filtered[['Z1', 'Z2', 'Z3', 'Z4']])
+
+# Then extract features again
+X = df_filtered[['Z1', 'Z2', 'Z3', 'Z4']]
+X_scaled = scaler.fit_transform(X)
+
+#plot after log-transformation
+sns.histplot(X_scaled.sum(axis=1), kde=True)
 
 #split into training and testing data
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_encoded, test_size=0.2, random_state=42)
