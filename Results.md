@@ -20,7 +20,7 @@ The plot is now symmetric, bell-shaped curve centered around 0, which has now re
 The matrix predicts the genes of the same clusters.
 
 # UMAP Results
-
+![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20144503.png)
 
 This visualization shows a UMAP projection combined with K-Means clustering, where points are grouped into six distinct clusters (labeled 0-5) using different colors.
 
