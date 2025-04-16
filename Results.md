@@ -15,12 +15,12 @@ This hitogram is after the standardization and log transformation-
 The plot is now symmetric, bell-shaped curve centered around 0, which has now removed the extreme right skew, showing proper standardization.
 
 # Confusion matrix Results
-![My Image]
+![My Image](https://github.com/Akshya29/machiny/blob/main/confusion_matrix%20(2).png)
 
 The matrix predicts the genes of the same clusters.
 
 # UMAP Results
-![My Image](https://github.com/Akshya29/machiny/blob/main/Screenshot%202025-04-15%20144503.png)
+![My Image](https://github.com/Akshya29/machiny/blob/main/umap_Projection_with_K-Means_Clusters.png)
 
 This visualization shows a UMAP projection combined with K-Means clustering, where points are grouped into six distinct clusters (labeled 0-5) using different colors.
 
